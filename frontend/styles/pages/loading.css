@@ -1,0 +1,131 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.loader-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(29,158,117,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29,158,117,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.logo-svg-wrap {
+  position: relative;
+  width: 130px; height: 130px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 28px;
+}
+
+.ring {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #1D9E75;
+  border-right-color: #1D9E75;
+  animation: spin 1.4s linear infinite;
+}
+
+.ring-outer {
+  position: absolute; inset: -10px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  border-bottom-color: #185FA5;
+  border-left-color: #185FA5;
+  animation: spin 2s linear infinite reverse;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.logo-inner {
+  width: 90px; height: 90px;
+  background: #0f2040;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid rgba(29,158,117,0.25);
+}
+
+.brand-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px; font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  animation: fadeUp 0.8s ease 0.2s both;
+}
+
+.bay  { color: #0f2040}
+.tack { color: #18A0A0; }
+
+.tagline {
+  font-size: 12px; color: #0f2040(255,255,255,0.35);
+  font-weight: bold;
+  letter-spacing: 3px; text-transform: uppercase;
+  margin-bottom: 48px;
+  animation: fadeUp 0.8s ease 0.4s both;
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(12px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.progress-track {
+  width: 220px; height: 3px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 99px; overflow: hidden;
+  margin-bottom: 14px;
+  animation: fadeUp 0.8s ease 0.5s both;
+}
+
+.progress-fill {
+  height: 100%; width: 0%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #185FA5, #1D9E75);
+  transition: width 0.3s ease;
+}
+
+.loading-text {
+  font-size: 16px; color: #0f2040(255, 255, 255, 0.4);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+
+.dot1, .dot2, .dot3 { animation: dotFade 1.4s infinite; }
+.dot1 { animation-delay: 0s; }
+.dot2 { animation-delay: 0.25s; }
+.dot3 { animation-delay: 0.5s; }
+
+@keyframes dotFade {
+  0%, 100% { opacity: 0; }
+  50%       { opacity: 1; }
+}
+
+.particle {
+  position: absolute; border-radius: 50%;
+  animation: floatUp linear infinite; opacity: 0;
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(100%) scale(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.5; }
+  100% { transform: translateY(-80px) scale(1); opacity: 0; }
+}
