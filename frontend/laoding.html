@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BayTack - Loading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles/pages/loading.css"/>
+</head>
+<body>
+  <div class="loader-wrapper" id="loaderWrapper">
+    <div class="bg-grid"></div>
+    <div class="particles" id="particles"></div>
+
+    <div class="logo-svg-wrap">
+      <div class="ring-outer"></div>
+      <div class="ring"></div>
+      <div class="logo-inner">
+        <svg width="56" height="60" viewBox="0 0 56 60">
+          <defs>
+            <linearGradient id="bGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#378ADD"/>
+              <stop offset="100%" stop-color="#1D9E75"/>
+            </linearGradient>
+          </defs>
+          <text x="4" y="52" font-family="Montserrat,sans-serif"
+                font-size="56" font-weight="900" fill="url(#bGrad)">B</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="brand-name">
+      <span class="bay">Bay</span><span class="tack">Tack</span>
+    </div>
+    <div class="tagline">Home services &amp; tracking</div>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="loading-text">
+      Loading<span class="dot1">.</span><span class="dot2">.</span><span class="dot3">.</span>
+    </div>
+  </div>
+
+  <script src="scripts/core/loading.js"></script>
+</body>
+</html>
