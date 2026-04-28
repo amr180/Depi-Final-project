@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ekhdemni Egypt — Admin Analytics Dashboard"/>
+  <title>Analytics — Ekhdemni Admin</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+</head>
+
+<body data-page="analytics">
+
+<div class="app-layout">
+
+  <!-- ── Sidebar Slot (injected by SidebarComponent) ── -->
+  <div id="sidebar-slot"></div>
+
+  <!-- ── Main Content ── -->
+  <main class="main-content">
+
+    <!-- Header Slot -->
+    <div id="header-slot"></div>
+
+    <!-- Page Canvas -->
+    <div class="page-canvas">
+
+      <!-- ── Page Hero ── -->
+      <section class="page-hero">
+        <div>
+          <h1 class="page-hero__title">Marketplace Pulse</h1>
+          <p class="page-hero__subtitle">
+            Comprehensive reporting and live analytics for Ekhdemni Egypt ecosystem.
+          </p>
+        </div>
+        <div class="page-hero__actions">
+          <button class="btn btn--surface" id="export-csv-btn">
+            <span class="material-symbols-outlined">csv</span>
+            Export CSV
+          </button>
+          <button class="btn btn--secondary" id="export-pdf-btn">
+            <span class="material-symbols-outlined">picture_as_pdf</span>
+            Download PDF
+          </button>
+        </div>
+      </section>
+
+      <!-- ── KPI Grid ── -->
+      <section class="kpi-grid" aria-label="Key Performance Indicators">
+
+        <!-- Revenue -->
+        <div class="card card--hover" style="padding:var(--sp-8);display:flex;flex-direction:column;gap:var(--sp-8)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div style="width:3rem;height:3rem;background:rgba(0,80,212,0.08);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;color:var(--color-primary)">
+              <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">payments</span>
+            </div>
+            <span style="display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:9999px;background:rgba(105,246,184,0.15);color:var(--color-secondary);font-size:var(--text-sm);font-weight:700">
+              <span class="material-symbols-outlined" style="font-size:14px">trending_up</span>+12.5%
+            </span>
+          </div>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+              <p style="font-size:var(--text-sm);color:var(--color-on-surface-variant);font-weight:500">Total Revenue</p>
+              <span style="font-size:var(--text-xs);color:var(--color-secondary);font-weight:700">+12% vs last month</span>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:8px">
+              <h3 class="text-headline-lg" style="font-size:var(--text-3xl);font-family:var(--font-headline)" id="kpi-revenue">—</h3>
+              <span style="color:var(--color-on-surface-variant);font-size:var(--text-sm)">ج.م</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Users -->
+        <div class="card card--hover" style="padding:var(--sp-8);display:flex;flex-direction:column;gap:var(--sp-8)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div style="width:3rem;height:3rem;background:rgba(0,105,71,0.08);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;color:var(--color-secondary)">
+              <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">group</span>
+            </div>
+            <span style="display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:9999px;background:rgba(105,246,184,0.15);color:var(--color-secondary);font-size:var(--text-sm);font-weight:700">
+              <span class="material-symbols-outlined" style="font-size:14px">trending_up</span>+8.2%
+            </span>
+          </div>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+              <p style="font-size:var(--text-sm);color:var(--color-on-surface-variant);font-weight:500">Active Users</p>
+              <span style="font-size:var(--text-xs);color:var(--color-secondary);font-weight:700">+4% vs last week</span>
+            </div>
+            <h3 class="text-headline-lg" style="font-size:var(--text-3xl);font-family:var(--font-headline)" id="kpi-users">—</h3>
+          </div>
+        </div>
+
+        <!-- Completed Orders -->
+        <div class="card card--hover" style="padding:var(--sp-8);display:flex;flex-direction:column;gap:var(--sp-8)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div style="width:3rem;height:3rem;background:rgba(254,208,27,0.15);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;color:var(--color-tertiary)">
+              <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">task_alt</span>
+            </div>
+            <span style="display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:9999px;background:rgba(105,246,184,0.15);color:var(--color-secondary);font-size:var(--text-sm);font-weight:700">
+              <span class="material-symbols-outlined" style="font-size:14px">trending_up</span>+24%
+            </span>
+          </div>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+              <p style="font-size:var(--text-sm);color:var(--color-on-surface-variant);font-weight:500">Completed Orders</p>
+              <span style="font-size:var(--text-xs);color:var(--color-secondary);font-weight:700">+18% growth</span>
+            </div>
+            <h3 class="text-headline-lg" style="font-size:var(--text-3xl);font-family:var(--font-headline)" id="kpi-orders">—</h3>
+          </div>
+        </div>
+
+        <!-- New Providers -->
+        <div class="card card--hover" style="padding:var(--sp-8);display:flex;flex-direction:column;gap:var(--sp-8)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div style="width:3rem;height:3rem;background:rgba(123,156,255,0.12);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;color:var(--color-primary-dim)">
+              <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">engineering</span>
+            </div>
+            <span style="padding:4px 12px;border-radius:9999px;background:rgba(254,208,27,0.2);color:var(--color-tertiary);font-size:var(--text-sm);font-weight:700">New</span>
+          </div>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+              <p style="font-size:var(--text-sm);color:var(--color-on-surface-variant);font-weight:500">New Providers</p>
+              <span style="font-size:var(--text-xs);color:var(--color-tertiary-fixed-dim);font-weight:700">+52 this week</span>
+            </div>
+            <h3 class="text-headline-lg" style="font-size:var(--text-3xl);font-family:var(--font-headline)" id="kpi-providers">—</h3>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ── Analytics Charts Row ── -->
+      <section class="analytics-grid">
+
+        <!-- Revenue Trend -->
+        <div class="card chart-card">
+          <div class="chart-card__header">
+            <div class="chart-card__title">
+              <h4 class="text-headline-md">Revenue Growth Trend</h4>
+              <span class="stat-badge" style="background:rgba(0,80,212,0.08);color:var(--color-primary)">Avg. Monthly: 104k</span>
+            </div>
+            <select class="select-field" id="period-select" style="background:var(--color-surface-container-low)">
+              <option value="12m">Last 12 Months</option>
+              <option value="6m">Last 6 Months</option>
+              <option value="quarter">This Quarter</option>
+            </select>
+          </div>
+
+          <!-- SVG Chart Area -->
+          <div class="chart-area" style="position:relative">
+            <svg id="trend-svg" class="chart-svg" viewBox="0 0 1000 400" preserveAspectRatio="none"></svg>
+            <!-- Tooltip -->
+            <div class="chart-tooltip" id="trend-tooltip" style="top:-3rem">
+              <span class="tt-month" style="font-weight:700;display:block"></span>
+              <span class="tt-value" style="font-weight:900"></span>
+            </div>
+          </div>
+
+          <!-- X-axis labels -->
+          <div class="chart-x-labels">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+            <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span>
+            <span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+          </div>
+        </div>
+
+        <!-- Donut Chart -->
+        <div class="card chart-card">
+          <h4 class="text-headline-md" style="margin-bottom:var(--sp-6)">Revenue by Category</h4>
+
+          <div class="donut-container">
+            <svg viewBox="0 0 42 42" style="width:100%;height:100%;transform:rotate(-90deg)">
+              <circle cx="21" cy="21" r="15.91549" fill="transparent"
+                      stroke="var(--color-surface-container)" stroke-width="6"/>
+              <circle cx="21" cy="21" r="15.91549" fill="transparent"
+                      stroke="var(--color-primary)" stroke-width="6"
+                      stroke-dasharray="38 62" stroke-dashoffset="0"
+                      style="transition:stroke-dashoffset .6s ease"/>
+              <circle cx="21" cy="21" r="15.91549" fill="transparent"
+                      stroke="var(--color-secondary)" stroke-width="6"
+                      stroke-dasharray="25 75" stroke-dashoffset="-38"/>
+              <circle cx="21" cy="21" r="15.91549" fill="transparent"
+                      stroke="var(--color-tertiary-fixed-dim)" stroke-width="6"
+                      stroke-dasharray="18 82" stroke-dashoffset="-63"/>
+              <circle cx="21" cy="21" r="15.91549" fill="transparent"
+                      stroke="var(--color-primary-container)" stroke-width="6"
+                      stroke-dasharray="19 81" stroke-dashoffset="-81"/>
+            </svg>
+            <div class="donut-center">
+              <span class="donut-center__value">1.2M</span>
+              <span class="donut-center__label">Total Revenue</span>
+            </div>
+          </div>
+
+          <div class="donut-legend">
+            <div class="donut-legend-item"><span class="donut-legend-dot" style="background:var(--color-primary)"></span>AC Main. (38%)</div>
+            <div class="donut-legend-item"><span class="donut-legend-dot" style="background:var(--color-secondary)"></span>Plumbing (25%)</div>
+            <div class="donut-legend-item"><span class="donut-legend-dot" style="background:var(--color-tertiary-fixed-dim)"></span>Electrical (18%)</div>
+            <div class="donut-legend-item"><span class="donut-legend-dot" style="background:var(--color-primary-container)"></span>Others (19%)</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ── Bottom Row ── -->
+      <section class="bottom-grid">
+
+        <!-- Transactions Table -->
+        <div class="card" style="overflow:hidden">
+          <div style="padding:var(--sp-8);border-bottom:1px solid var(--color-surface-container-low);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--sp-3)">
+            <div style="display:flex;align-items:center;gap:var(--sp-3)">
+              <h4 class="text-headline-md">High-Value Transactions</h4>
+              <span class="stat-badge" style="background:rgba(0,105,71,0.1);color:var(--color-secondary)">Top Earners</span>
+            </div>
+            <a href="orders.html" style="color:var(--color-primary);font-weight:700;font-size:var(--text-sm);text-decoration:underline;text-underline-offset:4px">View All Orders</a>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="data-table">
+              <thead class="data-table__head">
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Service Impact</th>
+                  <th style="text-align:right">Amount</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="transactions-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Providers Panel -->
+        <div class="card chart-card providers-panel">
+          <div class="providers-panel__header">
+            <h4 class="text-headline-md">New Providers</h4>
+            <span class="stat-badge" style="background:rgba(251,81,81,0.1);color:var(--color-error)">12 Pending</span>
+          </div>
+          <div class="providers-list" id="providers-list"></div>
+          <button class="btn btn--primary btn--full" style="margin-top:var(--sp-6)">
+            Review All Applications
+          </button>
+        </div>
+
+      </section>
+
+      <!-- Mobile spacer -->
+      <div class="bottom-nav-spacer"></div>
+
+    </div><!-- /page-canvas -->
+  </main>
+</div>
+
+<!-- Footer / Mobile Nav Slot -->
+<div id="footer-slot"></div>
+
+<script type="module" src="scripts/main.js"></script>
+</body>
+</html>

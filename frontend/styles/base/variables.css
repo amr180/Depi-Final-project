@@ -1,0 +1,74 @@
+
+:root {
+  --color-primary:             #0050d4;
+  --color-primary-dim:         #0046bb;
+  --color-primary-fixed:       #7b9cff;
+  --color-primary-container:   #7b9cff;
+  --color-on-primary:          #f1f2ff;
+  --color-on-primary-container: #001e5a;
+  --color-inverse-primary:     #618bff;
+
+  --color-secondary:           #006947;
+  --color-secondary-dim:       #005c3d;
+  --color-secondary-fixed:     #69f6b8;
+  --color-secondary-container: #69f6b8;
+  --color-on-secondary:        #c8ffe0;
+  --color-on-secondary-container: #005a3c;
+
+  --color-tertiary:            #6f5900;
+  --color-tertiary-fixed:      #fed01b;
+  --color-tertiary-fixed-dim:  #eec200;
+  --color-tertiary-container:  #fed01b;
+  --color-on-tertiary-container: #594700;
+
+  --color-error:               #b31b25;
+  --color-error-container:     #fb5151;
+  --color-on-error:            #ffefee;
+
+  --color-surface:             #f5f7f9;
+  --color-surface-container-lowest:  #ffffff;
+  --color-surface-container-low:     #eef1f3;
+  --color-surface-container:         #e5e9eb;
+  --color-surface-container-high:    #dfe3e6;
+  --color-surface-container-highest: #d9dde0;
+  --color-inverse-surface:     #0b0f10;
+  --color-on-surface:          #2c2f31;
+  --color-on-surface-variant:  #595c5e;
+  --color-outline:             #747779;
+  --color-outline-variant:     #abadaf;
+
+  --gradient-primary:  linear-gradient(135deg, #0050d4 0%, #7b9cff 100%);
+
+  --font-headline: 'Plus Jakarta Sans', sans-serif;
+  --font-body:     'Be Vietnam Pro', sans-serif;
+
+  --text-xs:   0.625rem;
+  --text-sm:   0.75rem;
+  --text-base: 0.875rem;
+  --text-md:   1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+
+  --sp-1: 0.25rem; --sp-2: 0.5rem;  --sp-3: 0.75rem;
+  --sp-4: 1rem;    --sp-5: 1.25rem; --sp-6: 1.5rem;
+  --sp-8: 2rem;    --sp-10: 2.5rem; --sp-12: 3rem;
+
+  --radius-sm:   0.5rem;  --radius-md:   1rem;
+  --radius-lg:   1.5rem;  --radius-xl:   2rem;
+  --radius-full: 9999px;
+
+  --shadow-card:    0px 12px 32px rgba(44,47,49,0.06);
+  --shadow-primary: 0 8px 24px rgba(0,80,212,0.2);
+
+  --transition-fast:   0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow:   0.6s ease;
+
+  --sidebar-width: 16rem;
+  --header-height: 4rem;
+  --z-sidebar: 100;
+  --z-header:  200;
+  --z-modal:   300;
+}

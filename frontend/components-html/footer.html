@@ -1,0 +1,36 @@
+<!-- ============================================================
+     EKHDEMNI ADMIN — Mobile Bottom Navigation
+     Usage: Injected at end of body via components/sidebar.js
+     Only visible on mobile (< 768px)
+     ============================================================ -->
+
+<nav class="bottom-nav" id="bottom-nav" role="navigation" aria-label="Mobile navigation">
+
+  <button class="bottom-nav__item is-active" data-page="dashboard" aria-label="Dashboard">
+    <span class="material-symbols-outlined">dashboard</span>
+    <span>Home</span>
+  </button>
+
+  <button class="bottom-nav__item" data-page="analytics" aria-label="Analytics">
+    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">insert_chart</span>
+    <span>Stats</span>
+  </button>
+
+  <!-- FAB -->
+  <div class="bottom-nav__fab">
+    <button class="bottom-nav__fab-btn" aria-label="Quick action">
+      <span class="material-symbols-outlined">add</span>
+    </button>
+  </div>
+
+  <button class="bottom-nav__item" data-page="orders" aria-label="Orders">
+    <span class="material-symbols-outlined">shopping_cart</span>
+    <span>Orders</span>
+  </button>
+
+  <button class="bottom-nav__item" data-page="settings" aria-label="Settings">
+    <span class="material-symbols-outlined">settings</span>
+    <span>Admin</span>
+  </button>
+
+</nav>

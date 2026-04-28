@@ -1,0 +1,79 @@
+/* ============================================================
+   EKHDEMNI ADMIN — Button Components
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-6);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+              background var(--transition-fast), opacity var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:active { transform: scale(0.97); }
+.btn:disabled { opacity: 0.5; pointer-events: none; }
+
+/* ── Variants ── */
+.btn--primary {
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: var(--shadow-primary);
+}
+.btn--primary:hover { box-shadow: 0 12px 32px rgba(0,80,212,0.3); transform: translateY(-1px); }
+
+.btn--secondary {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+.btn--secondary:hover { filter: brightness(0.95); }
+
+.btn--surface {
+  background: var(--color-surface-container-highest);
+  color: var(--color-on-surface);
+}
+.btn--surface:hover { background: var(--color-surface-container-high); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary-container);
+}
+.btn--ghost:hover { background: rgba(0,80,212,0.06); }
+
+.btn--danger {
+  background: var(--color-error-container);
+  color: var(--color-on-error);
+}
+.btn--danger:hover { filter: brightness(0.92); }
+
+/* ── Sizes ── */
+.btn--sm { padding: var(--sp-2) var(--sp-4); font-size: var(--text-sm); }
+.btn--lg { padding: var(--sp-4) var(--sp-8); font-size: var(--text-md); }
+.btn--full { width: 100%; }
+
+/* ── Icon Button ── */
+.btn-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-on-surface-variant);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.btn-icon:hover {
+  background: var(--color-surface-container-low);
+  color: var(--color-primary);
+}

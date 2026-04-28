@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Manage service providers — Ekhdemni Admin"/>
+  <title>Manage Providers — Ekhdemni Admin</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+</head>
+
+<body data-page="providers">
+
+<div class="app-layout">
+
+  <!-- Sidebar Slot -->
+  <div id="sidebar-slot"></div>
+
+  <main class="main-content">
+
+    <!-- Header Slot -->
+    <div id="header-slot"></div>
+
+    <!-- Page Canvas -->
+    <div class="page-canvas">
+
+      <!-- ── Page Hero ── -->
+      <section class="page-hero">
+        <div>
+          <h1 class="page-hero__title">Manage Providers</h1>
+          <p class="page-hero__subtitle">
+            Oversee your service network and maintain quality standards.
+          </p>
+        </div>
+        <div class="page-hero__actions">
+          <!-- Search (visible on desktop; header search handles mobile) -->
+          <div class="header__search" style="display:block;max-width:22rem">
+            <span class="header__search-icon material-symbols-outlined">search</span>
+            <input
+              class="header__search-input"
+              type="search"
+              id="provider-search"
+              placeholder="Search by name or ID…"
+              autocomplete="off"
+            />
+          </div>
+          <button class="btn btn--primary" id="add-provider-btn">
+            <span class="material-symbols-outlined">person_add</span>
+            Add New Provider
+          </button>
+        </div>
+      </section>
+
+      <!-- ── Stats Strip ── -->
+      <section class="providers-stats-grid" aria-label="Provider statistics">
+
+        <!-- Total -->
+        <div class="stat-card">
+          <div class="stat-card__header">
+            <div class="stat-card__icon" style="background:rgba(0,80,212,0.07);color:var(--color-primary)">
+              <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">group</span>
+            </div>
+            <span class="stat-card__label">Global Reach</span>
+          </div>
+          <div class="stat-card__value" id="stat-total">—</div>
+          <div class="stat-card__sub" style="color:var(--color-on-surface-variant)">Total Providers</div>
+        </div>
+
+        <!-- Verified -->
+        <div class="stat-card">
+          <div class="stat-card__header">
+            <div class="stat-card__icon" style="background:rgba(105,246,184,0.15);color:var(--color-secondary)">
+              <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">verified</span>
+            </div>
+            <span class="stat-card__label">Active Pros</span>
+          </div>
+          <div class="stat-card__value" id="stat-verified">—</div>
+          <div class="stat-card__sub" style="color:var(--color-secondary)">Verified &amp; Online</div>
+        </div>
+
+        <!-- Pending -->
+        <div class="stat-card">
+          <div class="stat-card__header">
+            <div class="stat-card__icon" style="background:rgba(254,208,27,0.15);color:var(--color-tertiary)">
+              <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">pending_actions</span>
+            </div>
+            <span class="stat-card__label">Growth Pipeline</span>
+          </div>
+          <div class="stat-card__value" id="stat-pending">—</div>
+          <div class="stat-card__sub" style="color:var(--color-tertiary-fixed-dim)">Pending Approval</div>
+        </div>
+
+        <!-- Suspended -->
+        <div class="stat-card">
+          <div class="stat-card__header">
+            <div class="stat-card__icon" style="background:rgba(251,81,81,0.1);color:var(--color-error)">
+              <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">gavel</span>
+            </div>
+            <span class="stat-card__label">Compliance</span>
+          </div>
+          <div class="stat-card__value" id="stat-suspended">—</div>
+          <div class="stat-card__sub" style="color:var(--color-error)">Suspended Accounts</div>
+        </div>
+
+      </section>
+
+      <!-- ── Filter Bar ── -->
+      <div class="filter-bar" role="search" aria-label="Filter providers">
+        <div class="filter-bar__left">
+          <span class="filter-bar__label">Filter by:</span>
+          <select class="filter-select" id="filter-category" aria-label="Category">
+            <option value="">All Categories</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="electrical">Electrician</option>
+            <option value="cleaning">Cleaning</option>
+            <option value="carpentry">Carpentry</option>
+          </select>
+          <select class="filter-select" id="filter-status" aria-label="Status">
+            <option value="">All Statuses</option>
+            <option value="verified">Verified</option>
+            <option value="pending">Pending</option>
+            <option value="review">Under Review</option>
+            <option value="suspended">Suspended</option>
+          </select>
+          <select class="filter-select" id="filter-experience" aria-label="Experience">
+            <option value="">Any Experience</option>
+            <option value="1-3">1–3 Years</option>
+            <option value="3-5">3–5 Years</option>
+            <option value="5+">5+ Years</option>
+          </select>
+        </div>
+        <button class="btn btn--surface" id="reset-filters-btn" style="border-radius:var(--radius-full)">
+          <span class="material-symbols-outlined">filter_list_off</span>
+          Reset Filters
+        </button>
+      </div>
+
+      <!-- ── Providers Table ── -->
+      <div class="providers-table-wrap">
+        <div class="overflow-x-auto">
+          <table class="providers-table" aria-label="Providers list">
+            <thead>
+              <tr>
+                <th>Provider Details</th>
+                <th>Service Category</th>
+                <th style="text-align:center">Experience</th>
+                <th>Verification Status</th>
+                <th style="text-align:right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="providers-tbody">
+              <!-- Rows injected by ProvidersController -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="table-pagination">
+          <p class="table-pagination__info" id="pagination-info">Loading…</p>
+          <div class="pagination-controls" id="pagination-controls"></div>
+        </div>
+      </div>
+
+      <!-- ── Milestone Banner ── -->
+      <div class="milestone-banner" role="complementary" aria-label="Quality milestone">
+        <div class="milestone-banner__body">
+          <div class="milestone-banner__icon-wrap">
+            <span class="material-symbols-outlined" style="font-size:2rem;color:#fff;font-variation-settings:'FILL' 1">celebration</span>
+          </div>
+          <div>
+            <h3 class="milestone-banner__title">Quality Milestone Reached!</h3>
+            <p class="milestone-banner__sub">
+              98% of your active providers have completed the new Safety Certification. Great job, Team!
+            </p>
+          </div>
+        </div>
+        <button class="btn" style="background:#fff;color:var(--color-primary);flex-shrink:0">
+          View Report
+        </button>
+      </div>
+
+      <!-- Mobile spacer -->
+      <div class="bottom-nav-spacer"></div>
+
+    </div><!-- /page-canvas -->
+  </main>
+</div>
+
+<!-- Footer / Mobile Nav Slot -->
+<div id="footer-slot"></div>
+
+<!-- Modal Styles (injected inline so modal.js works without extra CSS file) -->
+<style>
+  .ek-modal {
+    position: fixed; inset: 0; z-index: var(--z-modal);
+    display: flex; align-items: center; justify-content: center; padding: var(--sp-4);
+  }
+  .ek-modal[hidden] { display: none; }
+  .ek-modal__backdrop {
+    position: absolute; inset: 0;
+    background: rgba(11,15,16,0.5); backdrop-filter: blur(4px);
+  }
+  .ek-modal__box {
+    position: relative; z-index: 1;
+    background: var(--color-surface-container-lowest);
+    border-radius: var(--radius-xl);
+    width: 100%; max-width: 32rem;
+    box-shadow: 0 32px 64px rgba(0,0,0,0.18);
+    animation: modalIn .2s ease;
+  }
+  @keyframes modalIn { from { opacity:0; transform:translateY(12px) scale(.97); } to { opacity:1; transform:none; } }
+  .ek-modal__header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: var(--sp-6) var(--sp-6) 0;
+  }
+  .ek-modal__body  { padding: var(--sp-4) var(--sp-6) var(--sp-6); font-size: var(--text-base); line-height:1.6; }
+  .ek-modal__footer{
+    display: flex; justify-content: flex-end; gap: var(--sp-3);
+    padding: var(--sp-4) var(--sp-6) var(--sp-6); border-top: 1px solid var(--color-surface-container-low);
+  }
+</style>
+
+<script type="module" src="scripts/main.js"></script>
+</body>
+</html>
