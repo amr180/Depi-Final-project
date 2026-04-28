@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In — Ekhdemni Admin</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="stylesheet" href="styles/pages/auth.css"/>
+</head>
+<body data-page="login">
+
+<div class="auth-layout">
+  <!-- Left Panel -->
+  <div class="auth-brand">
+    <div class="auth-brand__inner">
+      <div class="sidebar__logo" style="width:4rem;height:4rem;margin-bottom:var(--sp-6)">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#fff;font-size:2rem">rocket_launch</span>
+      </div>
+      <h1 style="font-family:var(--font-headline);font-size:2rem;font-weight:900;color:#fff;line-height:1.2;margin-bottom:var(--sp-3)">
+        Ekhdemni<br/>Admin Center
+      </h1>
+      <p style="color:rgba(255,255,255,0.7);font-size:var(--text-md);max-width:24rem">
+        Marketplace control for Egypt's #1 home-services platform.
+      </p>
+    </div>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="auth-form-panel">
+    <div class="auth-form-box">
+      <h2 style="font-family:var(--font-headline);font-size:var(--text-2xl);font-weight:800;margin-bottom:var(--sp-2)">Welcome back</h2>
+      <p style="color:var(--color-on-surface-variant);margin-bottom:var(--sp-8)">Sign in to your admin account</p>
+
+      <p class="auth-error" id="login-error" hidden style="background:rgba(251,81,81,0.1);color:var(--color-error);padding:var(--sp-3) var(--sp-4);border-radius:var(--radius-md);margin-bottom:var(--sp-4);font-size:var(--text-sm);font-weight:600"></p>
+
+      <form id="login-form" novalidate style="display:flex;flex-direction:column;gap:var(--sp-4)">
+        <div>
+          <label for="email" style="display:block;font-size:var(--text-sm);font-weight:600;margin-bottom:var(--sp-2)">Email address</label>
+          <input class="input-field" type="email" id="email" name="email" placeholder="admin@ekhdemni.eg" required autocomplete="email"/>
+        </div>
+        <div>
+          <label for="password" style="display:block;font-size:var(--text-sm);font-weight:600;margin-bottom:var(--sp-2)">Password</label>
+          <input class="input-field" type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password"/>
+        </div>
+        <button class="btn btn--primary btn--full" type="submit" style="margin-top:var(--sp-2)">Sign In</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="scripts/main.js"></script>
+</body>
+</html>

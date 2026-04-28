@@ -1,0 +1,54 @@
+<!-- ============================================================
+     EKHDEMNI ADMIN — Header / Topbar Component
+     Usage: Injected via components/sidebar.js into #header-slot
+     ============================================================ -->
+
+<header class="header" id="main-header" role="banner">
+
+  <!-- Left: Hamburger + Search -->
+  <div class="header__left">
+    <button class="header__hamburger btn-icon" id="sidebar-toggle" aria-label="Toggle navigation">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <div class="header__search">
+      <span class="header__search-icon material-symbols-outlined">search</span>
+      <input
+        class="header__search-input"
+        type="search"
+        placeholder="Search analytics data..."
+        id="global-search"
+        aria-label="Search"
+        autocomplete="off"
+      />
+    </div>
+  </div>
+
+  <!-- Right: Actions + User -->
+  <div class="header__right">
+    <div class="header__actions">
+      <button class="header__icon-btn" aria-label="Notifications">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="header__badge" aria-hidden="true"></span>
+      </button>
+      <button class="header__icon-btn" aria-label="Help">
+        <span class="material-symbols-outlined">help</span>
+      </button>
+    </div>
+
+    <div class="header__user">
+      <div class="header__user-info">
+        <p class="header__user-name" id="header-username">Admin User</p>
+        <p class="header__user-role">System Administrator</p>
+      </div>
+      <img
+        class="header__avatar"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRAuqeu52iBh1_8YNScVb1_gpZXvsN4fMJm3U7nuQU93JI07EHdk7MGabsipQkJyoGgt1dwAxs3lofhKB2NbVKLIfxJHzlYvH2xcjKHSnyFShHvIbL1CS4rAFoAqs0jbhMZ3KV53zUhiIEGb19O_CTiOnt8TEWLZ9k0s-M3bfbCBT2xtaqCmRfKfMHFPY1S8ypAk1iBCfPxKWJ6G7-QgzCqOvRgzrQ_wAITzNWAiidpXIB_PFEFwRDe7ShCV0UuX2fYKMv134Zka8"
+        alt="Admin avatar"
+        id="header-avatar"
+        width="40"
+        height="40"
+      />
+    </div>
+  </div>
+
+</header>

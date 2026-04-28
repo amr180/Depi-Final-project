@@ -1,0 +1,58 @@
+<!-- ============================================================
+     EKHDEMNI ADMIN — Sidebar Component
+     Usage: Inject via components/sidebar.js into #sidebar-slot
+     ============================================================ -->
+
+<aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+
+  <!-- Brand -->
+  <div class="sidebar__brand">
+    <div class="sidebar__logo">
+      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#fff">rocket_launch</span>
+    </div>
+    <div>
+      <p class="sidebar__brand-title">Admin Center</p>
+      <p class="sidebar__brand-subtitle">Marketplace Control</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="sidebar__nav" id="sidebar-nav">
+    <a href="index.html"      class="sidebar__nav-link" data-page="dashboard">
+      <span class="material-symbols-outlined">dashboard</span>
+      <span>Dashboard</span>
+    </a>
+    <a href="users.html"      class="sidebar__nav-link" data-page="users">
+      <span class="material-symbols-outlined">group</span>
+      <span>Users</span>
+    </a>
+    <a href="providers.html"  class="sidebar__nav-link" data-page="providers">
+      <span class="material-symbols-outlined">engineering</span>
+      <span>Providers</span>
+    </a>
+    <a href="orders.html"     class="sidebar__nav-link" data-page="orders">
+      <span class="material-symbols-outlined">shopping_cart</span>
+      <span>Orders</span>
+    </a>
+    <a href="analytics.html"  class="sidebar__nav-link" data-page="analytics">
+      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">insert_chart</span>
+      <span>Analytics</span>
+    </a>
+    <a href="settings.html"   class="sidebar__nav-link" data-page="settings">
+      <span class="material-symbols-outlined">settings</span>
+      <span>Settings</span>
+    </a>
+  </nav>
+
+  <!-- Footer CTA -->
+  <div class="sidebar__footer">
+    <button class="btn btn--primary btn--full" id="generate-report-btn">
+      <span class="material-symbols-outlined">description</span>
+      Generate Report
+    </button>
+  </div>
+
+</aside>
+
+<!-- Mobile Overlay -->
+<div class="sidebar-overlay" id="sidebar-overlay" role="presentation"></div>

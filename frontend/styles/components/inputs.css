@@ -1,0 +1,52 @@
+
+.input-field {
+  width: 100%;
+  background: var(--color-surface-container-low);
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--text-base);
+  color: var(--color-on-surface);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.input-field::placeholder { color: var(--color-on-surface-variant); }
+
+.input-field:focus {
+  background: var(--color-surface-container-lowest);
+  border-color: rgba(0, 80, 212, 0.4);
+  outline: none;
+}
+
+/* ── Select ── */
+.select-field {
+  appearance: none;
+  background: var(--color-surface-container-low) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23595c5e'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  padding: var(--sp-2) var(--sp-8) var(--sp-2) var(--sp-4);
+  font-size: var(--text-sm);
+  color: var(--color-on-surface);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.select-field:focus {
+  border-color: rgba(0,80,212,0.3);
+  outline: none;
+}
+
+/* ── Status Badge ── */
+.status-badge {
+  display: inline-block;
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.status-badge--success { background: var(--color-secondary-container); color: var(--color-on-secondary-container); }
+.status-badge--warning { background: var(--color-tertiary-container);  color: var(--color-on-tertiary-container); }
+.status-badge--error   { background: rgba(251,81,81,0.15);             color: var(--color-error); }
+.status-badge--pending { background: var(--color-surface-container);   color: var(--color-on-surface-variant); }
